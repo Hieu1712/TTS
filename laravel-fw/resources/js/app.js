@@ -7,6 +7,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue').default;
+window.axios = require('axios');
 
 /**
  * The following block of code may be used to automatically register your
@@ -19,8 +20,13 @@ window.Vue = require('vue').default;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
+Vue.component('product-component', require('./components/ProductHomePage.vue').default);
+Vue.component('category-component', require('./components/CategoryHomePage.vue').default);
+Vue.component('gallery-component', require('./components/Gallery.vue').default);
+Vue.component('shopmethod-component', require('./components/Shopmethod.vue').default);
+Vue.component('slider-component', require('./components/Slider.vue').default);
+Vue.component('header-component', require('./components/Header.vue').default);
+Vue.component('footer-component', require('./components/Footer.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
