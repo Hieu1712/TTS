@@ -3,21 +3,31 @@
         Time Zone
     @endsection
     <x-slot name="slot">
-        <main>  
+        <main>
+            <div id="app"> 
+                {{-- <header-component></header-component> --}}
+                <slider-component></slider-component>
+                <category-component :list-category="{{ $category }}"></category-component>
+                <gallery-component></gallery-component>
+                <product-component :list-product="{{ $products }}"></product-component>
+                <shopmethod-component></shopmethod-component>
+                {{-- <footer-component></footer-component> --}}
+            </div>
+            <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>  
             <!--? slider Area Start -->
-            @include('partials.my-slider')
+            {{-- @include('partials.my-slider') --}}
             <!-- slider Area End-->
 
             <!-- ? New Product Start -->
-            @include('partials.new-product')
+            {{-- @include('partials.new-product') --}}
             <!--  New Product End -->
 
             <!--? Gallery Area Start -->
-            @include('partials.gallery')
+            {{-- @include('partials.gallery') --}}
             <!-- Gallery Area End -->
 
             <!--? Popular Items Start -->
-            <div class="popular-items section-padding30">
+            {{-- <div class="popular-items section-padding30">
                 <div class="container">
                     <!-- Section tittle -->
                     <div class="row justify-content-center">
@@ -58,14 +68,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- Popular Items End -->
             <!--? Video Area Start -->
             <!-- Video Area End -->
             <!--? Watch Choice  Start-->
             <!-- Watch Choice  End-->
             <!--? Shop Method Start-->
-            @include('partials.shop-method')
+            {{-- @include('partials.shop-method') --}}
             <!-- Shop Method End-->
         </main>
         @section('script')

@@ -11,10 +11,13 @@ class CategoryController extends Controller
     public function index()
     {
         $category = Category::paginate(config('category.paginate'));
-        $products = Product::orderBy('name','ASC')->paginate(6);  
+        $products = Product::orderBy('name','ASC')->paginate(6); 
+        $category = json_encode($category); 
+        $products = json_encode($products); 
         return view('mypage.home-page', [
             'products' => $products,
             'category' => $category]);
+            // return response()->json(['products'=>$products,'category'=>$category]);
     }
 
     public function category($id)
